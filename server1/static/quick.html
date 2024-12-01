@@ -1,0 +1,15 @@
+<html>
+
+<head>
+  <meta name="htmx-config" content='{"selfRequestsOnly": false}' />
+</head>
+
+<body>
+  <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+  <!-- have a button POST a click via AJAX -->
+  <button hx-get="/click" hx-swap="outerHTML">
+    Click Me
+  </button>
+</body>
+
+</html>

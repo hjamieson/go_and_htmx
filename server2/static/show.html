@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Contact {{.Id}}</title>
+    <style>
+        .card {
+            display: flex;
+        }
+        .card div {
+            margin: 0;
+            padding: 1em;
+        }
+        .card div>div {
+            padding: .2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contact {{ .Id }}</h1>
+    <div class="card">
+        <div>
+            <h1>{{.First}} <br /> {{.Last}}</h1>
+        </div>
+
+        <div>
+            <div>Phone: {{.Phone}}</div>
+            <div>Email: {{.Email}}</div>
+            <div>Id: {{.Id}}</div>
+        </div>
+    </div>
+
+    <p>
+        <a href="/contacts/{{.Id}}/edit">Edit</a>
+        <a href="/contacts">Back</a>
+    </p>
+</body>
+
+</html>
