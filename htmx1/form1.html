@@ -1,0 +1,19 @@
+{{template "header.html" .}}
+<body>
+    <h1>Form One</h1>
+    <p>This form has some HTMX attributes.</p>
+    <div class="form1">
+        <form action="/form1" method="get" class="tool-bar">
+            <label for="search">Search Term</label>
+            <input id="search" type="search" name="q" 
+              value=""
+              placeholder="Search Contacts"/>
+            <button hx-post="/form1" hx-target="#main">
+              Search
+            </button>
+          </form>
+    </div>
+    <p>response will appear below:</p>
+    <div id="main"></div>
+</body>
+</html>

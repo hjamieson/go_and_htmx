@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Boosted Form Example</title>
+        <script src="/static/htmx.js"></script>
+    </head>
+    <body>
+        <h1>Boosted Form Example</h1>
+        <form action="/formBoost" hx-boost="true">
+            <input type="password" name="password" />
+            <button>Submit</button>
+        </form>
+        <hr />
+        <p hx-trigger="click" hx-get="/formBoost" hx-swap="outerHTML">
+            click here to see what happens!
+        </p>
+        <p>A line with no attributes.</p>
+
+        <div hx-boost="true">
+            <a href="/prefix/hugh">able</a><br />
+            <a href="/prefix/kay">baker</a><br />
+            <a href="/prefix/alex">charlie</a><br />
+            <a href="/" hx-boost="false">root</a><br />
+        </div>
+    </body>
+</html>

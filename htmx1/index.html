@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+    <title>htmx:Index</title>
+    <style>
+        body {
+            background-color: rgb(20, 2, 29);
+            color: #cbd80c;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTMX Index Page</h1>
+    <p>This page has a link to the HTMX library via CDN.</p>
+    <button hx-get="/contacts">press here for contacts</button>
+    <p hx-get="/contacts" hx-target="#tgt">Click this text to view the contacts page.</p>
+    <div id="tgt"></div>
+    <button hx-get="/contacts" hx-swap="outerHTML">Replace button with contacts</button>
+    <hr>
+    <div id="main">
+        <button hx-get="/contacts" hx-target="#main" hx-swap="outerHTML" 
+        hx-trigger="mouseenter">Contacts w/ mousenter</button>
+    </div>
+    <div id="m2">
+        <button hx-get="/contacts" hx-target="#m2" hx-swap="outerHTML" 
+        hx-trigger="click, keyup[ctrlKey && key=='l'] from:body">Contacts w/ click, keyup</button>
+    </div>
+</body>
+
+</html>

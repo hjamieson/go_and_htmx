@@ -1,0 +1,29 @@
+{{template "header.html" .}}
+<body>
+    <div id="main">
+        <h1>Form Three</h1>
+        <p>This form has some HTMX attributes.</p>
+        <div class="form3">
+            <label for="search">Search Contacts:</label>
+            <input
+                id="search"
+                name="q"
+                type="search"
+                value=""
+                placeholder="Search Contacts"
+            />
+            <button
+                hx-post="/contacts"
+                hx-target="#response"
+                hx-include="#search, #code, [name='coupon']"
+            >
+                Search
+            </button>
+            <input id="code" type="hidden" value="secret42" name="code" />
+            <input type="hidden" value="coupon42" name="coupon" />
+        </div>
+        <p>response will appear below:</p>
+        <div id="response"></div>
+    </div>
+</body>
+{{template "footer.html" .}}

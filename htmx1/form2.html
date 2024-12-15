@@ -1,0 +1,19 @@
+{{template "header.html" .}}
+<body>
+    <div id="main">
+        <h1>Form Two</h1>
+        <p>This form has some HTMX attributes.</p>
+        <div class="form2">
+            <button
+                hx-get="/contacts"
+                hx-target="#response"
+                hx-swap="innerHTML"
+                hx-trigger="click, keyup[ctrlKey && key=='l'] from:body"
+            >
+                contacts
+            </button>
+        </div>
+        <p>response will appear below:</p>
+        <div id="response"></div>
+    </div>
+</body>
