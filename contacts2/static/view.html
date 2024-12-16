@@ -1,0 +1,22 @@
+{{ template "nav" }}
+<h1>Contact {{ .Id }}</h1>
+
+<div class="card">
+    <div>
+        <h1>
+            {{.First}} <br />
+            {{.Last}}
+        </h1>
+    </div>
+
+    <div>
+        <div>Phone: {{.Phone}}</div>
+        <div>Email: {{.Email}}</div>
+        <div>Id: {{.Id}}</div>
+    </div>
+</div>
+
+<p>
+    <a href="/contacts/{{.Id}}/edit" hx-boost="true">Edit</a>
+    <a href="/contacts">Back</a>
+</p>

@@ -1,0 +1,36 @@
+{{define "nav"}}
+<nav>
+    <ul>
+        <li><a href="/contacts">List</a></li>
+        <li><a href="/contacts/new" hx-boost="true">create</a></li>
+    </ul>
+</nav>
+{{end}}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contacts</title>
+        <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:ital@0;1&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+
+    <body>
+        {{template "nav" . }}
+        <div id="current">{{template "Contacts" . }}</div>
+
+        <div>
+            <p>
+                <a href="/contacts/new" hx-boost="true">Add Contact</a>
+            </p>
+        </div>
+    </body>
+</html>
